@@ -10,7 +10,6 @@ const UsersList = () => {
     const effectRan = useRef(false)
 
     useEffect(() => {
-        setIsLoading(true)
 
         const getUsers = async () => {
             try {
@@ -22,7 +21,6 @@ const UsersList = () => {
                     withCredentials: true
                 })
                 setUsers(response.data)
-                setIsLoading(false)
             } catch (err) {
                 console.error(err)
             }
