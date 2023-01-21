@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = 'https://tan-indri-wrap.cyclic.app/'
+const BASE_URL = 'https://ruby-frightened-goose.cyclic.app/'
 
 export default axios.create({
     baseURL: BASE_URL
