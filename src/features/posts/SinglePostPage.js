@@ -1,9 +1,12 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from '../../api/axios'
-import TimeAgo from './TimeAgo'
 import useAuth from '../../hooks/useAuth'
 import jwt_decode from "jwt-decode";
+
+import TimeAgo from './TimeAgo'
+import CommentsSection from '../comments/CommentsSection';
+import './posts.css'
 
 const SinglePostPage = () => {
     const { postId } = useParams()
@@ -24,13 +27,10 @@ const SinglePostPage = () => {
 
     useEffect(() => {
         setIsLoading(true)
-        const controller = new AbortController()
 
         const getPost = async () => {
             try {
-                const response = await axios.get(`/posts/${postId}`, {
-                    signal: controller.signal
-                })
+                const response = await axios.get(`/posts/${postId}`)
                 setPost(response.data)
                 setIsLoading(false)
             } catch (err) {
@@ -41,9 +41,8 @@ const SinglePostPage = () => {
         if (effectRan.current){
             getPost();
         }
-
+        
         return () => {
-            controller.abort();
             effectRan.current = true
         }
     }, [])
@@ -82,7 +81,7 @@ const SinglePostPage = () => {
     }
 
   return (
-    <article>
+    <article className='singlePostPage'>
         <h2>{post.title}</h2>
         
         <p>{post.content}</p>
@@ -109,6 +108,7 @@ const SinglePostPage = () => {
                 <Link className="editButton" to={`../edit/${postId}`}>Edit</Link> 
             } 
         </div>
+        <CommentsSection />
     </article>
   )
 }

@@ -26,6 +26,7 @@ function App() {
     <Routes>
       <Route element={<PersistLogin />}>
       <Route path='/' element={<Layout />}>
+
         {/* public routes */}
         <Route index element={<PostList />} />
         <Route path="register" element={<Register />} />
@@ -34,6 +35,7 @@ function App() {
         <Route path='unauthorized' element={<Unauthorized />} />
 
         <Route path='post'>
+          
           <Route path=':postId' element={<SinglePostPage />} />
 
           {/* Protected routes */}

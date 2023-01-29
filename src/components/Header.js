@@ -6,7 +6,7 @@ import useLogout from '../hooks/useLogout'
 const Header = () => {
   const { auth } = useAuth()
   const logout = useLogout()
-  const [drop, setDrop] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [closeIcon, setCloseIcon] = useState(false)
 
   const signOut = async () => {
@@ -14,7 +14,7 @@ const Header = () => {
   }
 
   const onIconOrNavClicked = () => {
-    setDrop(prev => !prev)
+    setIsMenuOpen(prev => !prev)
     setCloseIcon(prev => !prev)
   }
 
@@ -31,8 +31,8 @@ const Header = () => {
         </section>
         
         <nav 
-          className={drop ? 'dropdown' : ''}
-          onClick={drop ? onIconOrNavClicked : null}
+          className={`${isMenuOpen ? 'dropdown' : ''}`}
+          onClick={isMenuOpen ? onIconOrNavClicked : null}
         >
             <ul>
                 <li><Link to='/'>Home</Link></li>

@@ -45,7 +45,7 @@ header h1 {
   padding: 0.25rem 0.5rem;
   display: flex;
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
   flex-flow: row nowrap;
   justify-content: space-between;
 }
@@ -80,7 +80,9 @@ nav a:hover, nav a:focus {
 }
 
 main {
-  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
   margin: auto;
 }
 
@@ -90,8 +92,6 @@ section {
 }
 
 article {
-  border: 1px solid #000;
-  border-radius: 10px;
   margin: 0.5rem 0.5rem;
   padding: 1em;
 }
@@ -126,13 +126,6 @@ textarea {
   justify-content: center;
 }
 
-.sortBy {
-  width: 50%;
-  margin: 0;
-  align-self: flex-end;
-  font-size: 1.5rem;
-}
-
 @media screen and (max-width: 400px) {
   .sortBy {
     width: 45%;
@@ -158,6 +151,7 @@ a {
   display: flex;
   align-items: center;
   margin-top: 1rem;
+  justify-content: flex-end;
 }
 
 .deleteButton {
@@ -317,6 +311,20 @@ li {
     font-size: 2.5rem;
   }
 
+  .header-title-line {
+    max-width: 100%;
+  }
+
+  article {
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+  }
+
+  .postCard:hover {
+    scale: 1.03;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  }
+
   .menu-button {
     display: block;
     background-color: transparent;
@@ -374,8 +382,8 @@ li {
     top: 94px;
     left: 0;
     transform-origin: top center;
-    animation: showMenu 0.5s ease-in-out alternate;
     background-color: palevioletred;
+    animation: showMenu 0.5s ease-in-out;
   }
 
   .dropdown {

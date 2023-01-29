@@ -1,0 +1,80 @@
+.commentForm textarea {
+    resize: vertical;
+    border-radius: 0;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.commentForm > .formButton {
+    
+}
+
+.commentCard {
+    position: relative;
+    border: 1px solid lightgrey;
+    margin: 1rem 0;
+    border-radius: 5px;
+    padding: 0.5rem 1rem; 
+}
+
+.commentCard p:first-of-type {
+    font-size: 1rem;
+    margin-top: 0;
+    padding-top: 0.4rem;
+}
+
+.commentButton {
+    border: 2px solid palevioletred;
+    max-width: 200px;
+    align-self: flex-end;
+    margin-top: 0;
+}
+
+.commentButton:hover {
+    background-color: #fff;
+    color: palevioletred;
+    transition: all 0.8s ease-in-out;
+}
+
+.expandComment {
+    align-self: flex-end;
+    color: rgba(0, 0, 0, 0.65);
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.expandComment:hover,.deleteComment:hover {
+    text-decoration: underline;
+}
+
+.deleteComment {
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    font-size: 0.9rem;
+    color: palevioletred;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+    .commentsList >  .commentCard {
+        border: 1px solid lightgray;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    .commentCard {
+        margin: 0;
+        padding: 0.3rem 0;
+    }
+
+    .commentsList div:last-of-type {
+        border-bottom: none;
+    }
+
+    .commentsList div:first-of-type {
+        border-top: 2px solid lightgray;
+    }
+}
