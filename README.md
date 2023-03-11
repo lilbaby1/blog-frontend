@@ -10,6 +10,8 @@ On the home page, the post list can be set to start with either the newest or th
 Each post can be viewed individually. If the user is logged in, he/she can delete or edit their posts. <br />
 Only admins can delete posts that are not theirs. Posts can only be editted by their author. <br />
 
+<h4>To start the application make sure you have npm installed. Use <i>npm start</i> to start the application.</h4>
+
 <h4>Admin - walt1 <br />
 Password - walt1</h4>
 User - walt2 <br />
