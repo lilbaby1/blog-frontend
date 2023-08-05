@@ -1,32 +1,32 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from "react";
 
 const getLocalValue = (key, initValue) => {
-    // Server Side React: Next.js
-    if (typeof window === 'undefined') return initValue
+  // Server Side React: Next.js
+  if (typeof window === "undefined") return initValue;
 
-    // if a value is already stored
-    const localValue = JSON.parse(localStorage.getItem(key))
-    if (localValue) return localValue
+  // if a value is already stored
+  const localValue = JSON.parse(localStorage.getItem(key));
+  if (localValue) return localValue;
 
-    // return result of a function
-    if (initValue instanceof Function) return initValue()
+  // return result of a function
+  if (initValue instanceof Function) return initValue();
 
-    return initValue
-}
+  return initValue;
+};
 
 const useLocalStorage = (key, initValue) => {
-    const [value, setValue] = useState(() => {
-        return getLocalValue(key, initValue)
-    })
+  const [value, setValue] = useState(() => {
+    return getLocalValue(key, initValue);
+  });
 
-    const effectRan = useRef(false)
+  const effectRan = useRef(false);
 
-    useEffect(() => {
-        if (effectRan.current) localStorage.setItem(key, JSON.stringify(value))
-        return () => effectRan.current = true
-    }, [key, value])
+  useEffect(() => {
+    if (effectRan.current) localStorage.setItem(key, JSON.stringify(value));
+    return () => (effectRan.current = true);
+  }, [key, value]);
 
-    return [value, setValue]
-}
+  return [value, setValue];
+};
 
-export default useLocalStorage
+export default useLocalStorage;

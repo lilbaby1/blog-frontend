@@ -1,41 +1,84 @@
 .postCard {
-    border-bottom: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+
+  @media screen and (max-width: 400px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .singlePostPage {
-    border: none;
+  border: none;
 }
 
 .sortBy {
-    width: 50%;
-    max-width: 240px;
-    margin: 0;
-    align-self: flex-end;
-    font-size: 1.5rem;
+  width: 50%;
+  max-width: 240px;
+  margin: 0;
+  align-self: flex-end;
+  font-size: 1.5rem;
 }
 
 .pagination {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .pageButton {
-    height: auto;
-    padding: 0;
-    margin: 1rem;
-    background-color: transparent;
-    color: palevioletred;
-    cursor: pointer;
+  height: auto;
+  padding: 0;
+  margin: 1rem;
+  background-color: transparent;
+  color: palevioletred;
+  cursor: pointer;
 }
 
 .pageButton:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 700px) {
-    .singlePostPage {
-        margin: 0.5rem 0;
-    }
+  .singlePostPage {
+    margin: 0.5rem 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .singlePostPage {
+    padding: 0.8rem;
+  }
+  .singlePostPage h2 {
+    font-size: 2rem;
+  }
+  .singlePostPage p {
+    font-size: 1rem;
+  }
+  .singlePostPage section,
+  select {
+    margin: 0 0 1rem 0;
+  }
+
+  .sortBy {
+    font-size: 1rem;
+  }
+
+  .postCard {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .postCard h2 {
+    font-size: 1.5rem;
+  }
+
+  .postCard p {
+    font-size: 1rem;
+  }
+
+  .pageButton,
+  span {
+    font-size: 1rem;
+  }
 }
